@@ -114,7 +114,7 @@ What is the right way to remove all the elements, except "Q3" from the array?
 process.argv.slice(2);
 
 
-
+Solution to Exercise 1 + 2:
 
 <a href="https://stackblitz.com/edit/node-9e86bs?ctl=1&embed=1&file=my-name.sh">
   <img
