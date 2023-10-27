@@ -4,17 +4,25 @@ Make a basic node script to show the process ID of their current node applicatio
 
 What do you notice each time your app runs? (hint: look in the terminal)
 
+
+
 ## Exercise 2 (exit-process.js):
 
-Make a node scrip tthat creates a script to exit a process when a specific condition is true. Like exit the application, if the user inputs a specific number or if a specific number is randomly generated. 
+Make a node script that creates a script to exit a process when a specific condition is true. Like exit the application, if the user inputs a specific number or if a specific number is randomly generated. 
+
+
 
 ## Exercise 3 (custom-exit.js):
 
 Make a node script that exits the current process with a custom exit code (don't worry about HTTP status codes yet)
 
+
+
 ## Exercise 4 (listen-exit.js)
 
 Make a node script to listen for the `exit` event on process object amd do a specific thing before it closes like log to console or write a file to the system
+
+
 
 ## Exercise 5 (http-graceful-close.js optional):
 
@@ -28,12 +36,13 @@ Close the server and exit the process
 
 
 
-
 NOTE: SIGINT event = an event from unix systems that fires when the user interrupts a process in terminal using 'Ctrl + C'. It will clean resources up and shoutdown (graceful shutdown)
 
 SIGTERM event = an event from unix systems that fires when an external application or process requests that the process shutdown (process managers/task mgmers etc.). It iwll still clean up resources and exit gracefully
 
 SIGKILL - abruptly end process and may be not be a graceful shutdown
+
+
 
 ## Exercise 6  (stdout and stdin)
 
@@ -43,11 +52,18 @@ Listen for stdin 'readable' event and read the data chunk from terminal and base
 
 
 
+### Solutions to exercises (excluding optional exercise):
 
 
+<a href="https://stackblitz.com/edit/stackblitz-starters-xk5bda?embed=1&file=stdin-stdout.js&view=editor">
+  <img
+    alt="Open in StackBlitz"
+    src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"
+  />
+</a>
 
 
-
+#### Additional Questions
 
 What are common use cases for process.exit?
 
