@@ -16,7 +16,7 @@ Make a node script that exits the current process with a custom exit code (don't
 
 Make a node script to listen for the `exit` event on process object amd do a specific thing before it closes like log to console or write a file to the system
 
-## Exercise 5 (http-graceful-close.js):
+## Exercise 5 (http-graceful-close.js optional):
 
 Make a HTTP server in node with a response header of text/plain content and statusCode 200 and a end with a unique response
 
