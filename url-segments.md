@@ -1,30 +1,18 @@
-## URL Segments
-Goal: Learn how to break down URLs and extract specific segments from them.
+## Exercise instructions (url-app.js)
 
-* `url` module is great for breaking down a URL into it's components
+Make a node CLI script that takes in a arument from the CLI, checkes if the argument exists, turns the url argument into it's component parts then use `query string` module to parse it into a JS Object
 
-## How to parse a URL?
 
-1. Cheeck if rhe user passed in a URL as a argument from the CLI 
-```js
-const url = require('url');
-const args = process.argv.slice(2);
-const [urlEntered] = args;
+Check solution here when done!
 
-if (urlEntered === undefined){
-    console.error('Please enter a url i.e. https://www.google.com');
-    process.exit(0);
-}
-```
-2. Use `url.parse` method to turn URL string => URL obhect with each part as a prop
-```js
-const {protocol, slashes, host, query, href} = url.parse(urlEntered);
+<a href="https://stackblitz.com/edit/stackblitz-starters-myn8hz?file=url-app.js">
+  <img
+    alt="Open in StackBlitz"
+    src="https://developer.stackblitz.com/img/open_in_stackblitz.svg"
+  />
+</a>
 
-console.log(`Using protocol: ${protocol}`);
-console.log(`Using slashes: ${slashes}`);
-console.log(`Host: ${host}`);
-console.log(`Query: ${query}`);
-console.log(`HREF: ${href}`);
-```
+### Additional Notes:
 
-- After turning URL string into an object with each component of URL as it's props, we can use `querystring` module to turn to kv pairs
+Node is currently on version 21 and the url module is now the same as the web standard, url used in this exercise the legacy API now and the `parse` method is currently
+deprecated so be sure to read the new docs [here for URL module](https://nodejs.org/api/url.html#class-url)
