@@ -13,7 +13,7 @@ const owner = process.env.OWNER;
 const repo = 'automating-with-node.js'
 let isPushCommandEntered = false;
 const prLink = `https:/www./github.com/${owner}/${repo}/compare/`;
-const aliasPath = "/mnt/c/\"Program Files\"/Google/Chrome/Application/chrome.exe"
+const aliasPath = "/mnt/c/\"Program Files\"/Google/Chrome/Application/chrome.exe\" --profile-directory=\"Profile 3\"";
 
 function gitAdd(callback=null) {
     exec("git add .", (error, stdout, stderr) => {
@@ -53,11 +53,8 @@ function promptForCommit() {
                     promptForCommit();
                 }, "notes and files updated!")
             });
-        } else {
-            console.log('Invalid operation, Use --help to see available operations!');
-            promptForCommit();
         }
-         if (input.includes("gpo")) {
+         else if (input.includes("gpo")) {
             const branchName = input.replace('gpo ', '').trim();
             const pullRequestLink = prLink + branchName;
 
@@ -77,8 +74,8 @@ function promptForCommit() {
                 console.log('good bye!');
                 process.exit(0);
             } else {
-                console.loog('Poor branch name format. Please use "git push origin [branch-name]');
-                promptForCommit();
+                    console.log('Invalid operation, Use --help to see available operations!');
+                    promptForCommit();
             }
         }
      })
