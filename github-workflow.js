@@ -12,8 +12,8 @@ const authToken = process.env.AUTH_TOKEN;
 const owner = process.env.OWNER;
 const repo = 'automating-with-node.js'
 let isPushCommandEntered = false;
-const prLink = `https:/www./github.com/${owner}/${repo}/compare/`;
-const aliasPath = "/mnt/c/\"Program Files\"/Google/Chrome/Application/chrome.exe\" --profile-directory=\"Profile 3\"";
+const prLink = `https://www.github.com/${owner}/${repo}/compare/`;
+const aliasPath = "/mnt/c/\"Program Files\"/Google/Chrome/Application/chrome.exe";
 
 function gitAdd(callback=null) {
     exec("git add .", (error, stdout, stderr) => {
@@ -60,6 +60,7 @@ function promptForCommit() {
 
             if (pullRequestLink) {
                 isPushCommandEntered = true;
+
                 exec(`git push origin ${branchName}`, (error, stdout, stderr) => {
                     if (error) {
                         console.error("Git Push Operation failed: ", error);
@@ -67,7 +68,7 @@ function promptForCommit() {
                     }
 
                     console.log("git push operation succeeded! Opening link to PR");
-                    exec(`${aliasPath} ${pullRequestLink}`)
+                    exec(`${aliasPath} --profile-directory=\"Profile 3\" ${pullRequestLink}`)
                 });
       
             } else if(input.toLowerCase[0] === "n" && !input.includes("gpo")){
@@ -80,6 +81,7 @@ function promptForCommit() {
         }
      })
 }
+
 
 promptForCommit()
   
